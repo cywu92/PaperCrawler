@@ -144,39 +144,6 @@ def main(queries, start_year_month, end_year_month, num_papers):
 
     print("-"*25 + ' Done ' + "-"*25)
 
-# if __name__ == "__main__":
-#     queries = ["fairness", "machine learning", "synthetic data generation"]
-#     start_year_month = "202301"  # Setting the start year-month
-#     end_year_month = "202312" # end_year_month not set and will default to the current year-month
-#     num_papers = 5
-    
-#     today = datetime.today().strftime('%Y%m%d')
-#     download_dir = os.path.join(BASE_DIR, today)
-#     mkdir(download_dir)
-    
-#     print("-"*50)
-#     print(f"[{today}] Crawling papers from arXiv from {start_year_month}")
-#     print("-"*50)
-    
-#     downloaded_papers = read_downloaded_papers()
-#     downloaded_titles = downloaded_papers['Title'].tolist()
-    
-#     papers = fetch_arxiv_papers(queries, start_year_month, num_papers=num_papers, downloaded_titles=downloaded_titles)
-#     download_papers(papers, download_dir)
-    
-#     all_paper_info = []
-#     for paper in papers:
-#         all_paper_info.append({
-#             "Download Date": today,
-#             "YearMonth": paper['YearMonth'],
-#             "Title": paper['Title'],
-#             "Journal": paper['Journal'],
-#             "First Author": paper['First Author']
-#         })
-#     save_all_paper_info(all_paper_info)
-    
-#     print("-"*25 + ' Done ' + "-"*25)
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Download papers from arXiv.')
     parser.add_argument('--queries', nargs='+', default=Config.DEFAULT_QUERIES, help='Keywords to search for papers')
